@@ -1,3 +1,4 @@
+import { embaralhar } from "@/function/array"
 import RespostaModel from "./resposta"
 
 export default class QuestaoModel {
@@ -12,7 +13,7 @@ export default class QuestaoModel {
 		this.#id = id
 		this.#enunciado = enunciado
 		this.#respostas = respostas
-		this.#acertou = acertou
+		this.#acertou = acertou		
 	}
 	get id() {
 		return this.#id
@@ -34,11 +35,16 @@ export default class QuestaoModel {
 		return false
 	}
 
+	embaralharRespostas(): QuestaoModel {
+		let respostasEmbaralhadas = embaralhar(this.#respostas)
+		return new QuestaoModel(this.#id, this.#enunciado, respostasEmbaralhadas, this.#acertou)
+	}
+
 	paraObjeto() {
 		return {
 			id: this.#id,
 			enunciado: this.#enunciado,
-			respostas: this.#respostas.map(resp => resp.paraObjeto()),
+			respostas: this.#respostas.map(resp => resp.paraObjeto()),			
 			acertou: this.#acertou
 		}
 		

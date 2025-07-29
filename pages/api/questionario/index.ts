@@ -1,6 +1,7 @@
+import { embaralhar } from "@/function/array"
 import questoes from "../questoes/bancoDeQuestoes"
 
 export default (req, res) => {
-	questoes
-	res.status(200).json(questoes.map(questao => questao.id))
+	const ids =  questoes.map(questao => questao.id)
+	res.status(200).json(embaralhar(ids))
 }

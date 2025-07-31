@@ -1,14 +1,13 @@
-import QuestaoModel from "@/model/questao";
-import RespostaModel from "@/model/resposta";
+import QuestaoModel from '../../../model/questao'
+import RespostaModel from '../../../model/resposta'
 
 const questoes: QuestaoModel[] = [
 	new QuestaoModel(306, 'Qual bicho transmite a Doença de Chagas?', [
-		RespostaModel.errada('Abelha'),
-		RespostaModel.errada('Barata'),
-		RespostaModel.errada('Pulga'),
-		RespostaModel.certa('Barbeiro'),
-
-	]),
+        RespostaModel.errada('Abelha'),
+        RespostaModel.errada('Barata'),
+        RespostaModel.errada('Pulga'),
+        RespostaModel.certa('Barbeiro'),
+    ]),
 	new QuestaoModel(202, 'Qual fruto é conchecido no Nordeste como "Jerimum"?', [
 		RespostaModel.errada('Caju'),
 		RespostaModel.errada('Côco'),

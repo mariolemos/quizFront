@@ -4,7 +4,7 @@ import Questao from "../components/Questao";
 import QuestaoModel from "../model/questao";
 import RespostaModel from "../model/resposta";
 
-const questaoMock = new QuestaoModel(1, 'Melhor cor?', [
+const questaoMock = new QuestaoModel(1, 'Qual a Melhor cor?', [
 		RespostaModel.errada('Verde'),
 		RespostaModel.errada('Vermelha'),
 		RespostaModel.errada('Azul'),
@@ -17,8 +17,15 @@ export default function Home() {
 	const [questao, setQuestao] = useState(questaoMock)
 	
 	function respostaFornecida(indice: number) {		
-		console.log(indice)
+		
 		setQuestao(questao.responderCom(indice))
+	}
+
+	function tempoEsgotado() {		
+		if(questao.naoRespondida) {
+			setQuestao(questao.responderCom(-1))
+		}
+		
 	}
 		
   return (
@@ -30,7 +37,11 @@ export default function Home() {
 
 		
 	}}>
-		<Questao valor={questao} />
+		<Questao valor={questao}
+			tempoPraResposta={5} 
+			respostaFornecida={respostaFornecida}
+			tempoEsgotado={tempoEsgotado}
+		/>
 
 	</div>
     

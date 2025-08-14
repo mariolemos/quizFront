@@ -37,7 +37,7 @@ export default function Home() {
 	}}>
 		<Questionario
 			questao={questao}
-			ultima={true}
+			ultima={false}
 			questaoRespondida={questaoRespondida}
 			irPraProximoPasso={irPraProximoPasso}
 		/>	

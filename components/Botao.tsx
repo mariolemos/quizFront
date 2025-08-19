@@ -14,14 +14,15 @@ export default function Botao(props: BotaoProps) {
             <button className={styles.botao}
             onClick={props.onClick}>
             {props.texto}
-        </button>
+         </button>
+         
         )
     }
 
 return props.href ? (
     <Link href={props.href}>
         {renderizarBotao()}
-    </Link>
+    </Link>    
 ) : renderizarBotao()
 
 }

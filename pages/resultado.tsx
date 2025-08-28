@@ -1,7 +1,9 @@
+import Questionario from "@/components/Questionario";
+
 export default function resultado() {
     return (
         <div>
-            Resultado
+           <h1>Resultado</h1>
         </div>
     )
 }
